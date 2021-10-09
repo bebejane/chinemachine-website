@@ -1,6 +1,6 @@
 {
   "name": "chinemachine",
-  "version": "1.0.693",
+  "version": "1.0.695",
   "description": "Chinemachine website",
   "main": "server/index.js",
   "scripts": {
