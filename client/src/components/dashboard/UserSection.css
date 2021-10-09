@@ -1,0 +1,148 @@
+#dash-user-section{
+	position: relative;
+	display: block;
+	flex-direction:column;
+	max-width: 600px;
+	flex:1 1 auto;
+}
+.dash-user-group{
+	display: flex;
+	flex-direction:column;
+	margin-bottom: 20px;	
+}
+.dash-users{
+
+}
+.dash-user-wrap{
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	border: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 10px;
+	background-color: #f9f9f9;
+}
+.dash-user-wrap:last-child{
+	margin-bottom: 0px;
+}
+.dash-user-row{
+	display: flex;
+	flex-direction: row;
+
+}
+.dash-user-wrap > div{
+	align-items: center;
+}
+.dash-user-details{
+	display: flex;
+	flex-direction: column;
+}
+.dash-user-name{
+	
+}
+.dash-user-email, .dash-user-role{
+	opacity: 0.5;
+}
+
+.dash-user-buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex: 1 1;
+	font-size: 22px;
+}
+.dash-user-edit-btn, .dash-user-edit-btn-selected{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+	cursor: pointer;
+}
+.dash-user-edit-btn-selected{
+	background-color: lightgray;
+	
+}
+.dash-user-buttons > button:last-child{
+	margin-right: 0px;
+}
+.dash-user-delete-btn{
+	min-width: auto;
+	opacity: 0.3 !important;
+}
+.dash-user-delete-btn:hover{
+	opacity: 1;
+}
+.dash-users-search-input{
+	margin-bottom: 10px !important;
+}
+.dash-users-search{
+
+}
+.dash-users-search-empty{
+	opacity: 0.5;
+}
+#dash-user-add{
+	display: flex;
+	flex-direction: column;
+}
+#dash-user-add-header{
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+#dash-user-add-header > *{
+	user-select: none;	
+}
+
+.dash-user-add-header-toggle{
+	margin-left:5px;
+	color: #ffe40b;	
+	font-size: 18px;
+
+}
+.dash-user-form-hidden{
+	display: none !important;
+}
+
+.dash-user-form-buttons{
+	display: flex;
+	flex-direction: row;
+	flex: 1 1;
+	justify-content: flex-start;
+	margin-top: 10px;
+	margin-bottom: 0px !important;
+}
+.dash-user-form-buttons > button {
+	margin-right: 10px;
+}
+#dash-user-role{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	display: flex;
+}
+#dash-user-role > div{
+	flex:1 1 auto;
+}
+.dash-user-form, .dash-user-edit-form{
+	display: flex;
+	flex-direction: column;
+	flex:0 1;
+	margin-top: 10px;
+}
+.dash-user-form > *, .dash-user-edit-form > *{
+	margin-bottom: 10px;
+}
+.dash-user-form > input, .dash-user-edit-form > input{
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.dash-user-edit-form > input[disabled]{
+	background-color: #fff;
+	color: lightgray;
+}
+.dash-user-save{
+	margin-top:10px;
+}
+.dash-user-search-form{
+	margin-bottom: 10px;
+}

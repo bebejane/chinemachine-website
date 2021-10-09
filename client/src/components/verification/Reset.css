@@ -1,0 +1,125 @@
+#reset-wrapper{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 auto;
+	justify-content: flex-start;
+	width: 100%;
+}
+#reset-top{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	margin-bottom:5px;
+}
+#reset-error{
+	display: flex;
+	flex: 0 1 auto;
+	text-align: left;
+	color:red;
+	font-weight: bold;
+	padding: 5px;
+	background-color: red;
+	color:#fff;
+}
+#reset-spacer{
+	flex: 1 1 auto;
+	
+}
+#reset-login{
+	text-align: right;
+	flex: 0 1 auto;
+	cursor: pointer;
+	text-align: right;
+	box-sizing: border-box;
+	padding: 5px;
+	background-color: #fff;
+	font-weight: bold;
+
+}
+#reset-signup:active{
+	background-color: #000;	
+	color:#fff;
+}
+#reset-header{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color:#fff;
+	padding:20px;
+	font-size: 16px;
+	font-weight: bold;
+	flex:0 1 auto;
+	background-color: #000;
+	text-transform: uppercase;
+}
+#reset-header-border{
+	width:100%;
+	min-height: 20px;
+	max-height: 20px;
+	background-repeat: repeat-x;
+    background-image: url('../../images/jaggy-border-20px-bottom.png');
+}
+#reset-header-logo-wrap{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	top:0px;
+	left:0px;
+	margin:17px;
+	box-sizing: border-box;
+}
+#reset-header-logo{
+	position: relative;
+	max-width: 26px;
+	height: auto;
+	opacity: 0.95;
+}
+#reset-header-logo:hover{
+	opacity: 1;	
+}
+#reset-header-logo:active{
+	max-width: 22px;
+}
+#reset-content, #reset-content > form{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex:1 1 auto;
+	width: 100%;
+	box-sizing: border-box;
+	border:1px solid rgba(0,0,0,0.3);
+	background-color: #fff;
+}
+
+#reset-loggedin{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 auto;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+#reset-loggedin-message{
+
+}
+#reset-loggedin-logout{
+	margin-top: 20px;
+}
+#reset-password-message,#reset-password-message-done{
+	padding:20px;
+	padding-bottom: 0px;
+}
+#reset-password-message-done{
+	padding-bottom: 20px;	
+}
+#reset-password-resend{
+	margin-top: 10px;
+}

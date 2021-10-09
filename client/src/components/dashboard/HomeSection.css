@@ -1,0 +1,17 @@
+#dash-home{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex:1 1  auto;
+	height:100%;
+	width: 100%;
+	
+}
+#dash-home > div{
+	flex:1 1;
+	box-sizing: border-box;
+	margin-bottom:10px;
+}
+#dash-home > div:last-child{
+	
+}

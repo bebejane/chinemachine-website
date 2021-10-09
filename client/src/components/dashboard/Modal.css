@@ -1,0 +1,79 @@
+.dash-modal{
+	position: fixed;
+	display: flex;
+	top:0;
+	left:0;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	flex: 1 1 auto;
+	width:100%;
+	height: 100%;
+	background-color: transparent;
+	z-index: 3001;
+}
+.dash-modal-wrap{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	padding:0px;
+	min-width: 300px;
+	max-width: 90%;
+	box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+}
+.dash-modal-header, .dash-modal-header-error{
+	display: flex;
+	flex: 1 1 auto;
+	width:100%;
+	padding:20px;
+	line-height: 1;
+	align-items: center;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	background-color: #000;
+	color: #fff;
+}
+.dash-modal-header-error{
+	background-color: red;
+}
+.dash-modal-bottom{
+	display: flex;
+	flex: 1 1 auto;
+	width:100%;
+}
+.dash-modal-buttons{
+	display: flex;
+	flex: 1 1 auto;
+	width:100%;
+	flex-direction: row;
+	justify-content: flex-end;
+	width:100%;
+	padding:5px;
+	box-sizing: border-box;
+}
+.dash-modal-buttons > button{
+	
+	margin:2px;
+}
+.dash-modal-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	padding:40px;
+	padding-left:10px;
+	padding-right:10px;	
+	width: 100%;
+}
+.dash-modal-message, .dash-modal-message-error{
+	color:#000;
+	margin-bottom:10px;
+}
+.dash-modal-message-error{
+
+}

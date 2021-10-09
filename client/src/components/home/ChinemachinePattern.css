@@ -1,0 +1,16 @@
+#chinemachine-pattern {
+	display: flex;
+	height: auto;
+	flex: 1 0 auto;
+	padding-top: 0px;
+	width: 100%;
+	background-image: url('../../images/cm_pattern.png');
+	background-repeat: repeat-y;
+	background-size: 100% auto;
+}
+#chinemachine-pattern-fixed {
+	display: flex;
+	width: 96% !important;
+	width:100%;
+	margin-bottom: 10px;
+}

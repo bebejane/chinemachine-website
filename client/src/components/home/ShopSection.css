@@ -1,0 +1,138 @@
+#shop-products{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	flex: 0 1 auto;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.shop-product,
+.shop-product-full{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex:1 1 auto;
+	padding:0px;
+	cursor: pointer;
+	box-sizing: border-box;
+	align-items: flex-start;
+	margin-bottom: 20px;
+	overflow: hidden;
+	max-width: 800px;
+	min-width: 100%;
+}
+.shop-product-full{
+	flex:0 1 auto;
+	padding:10px;
+}
+.shop-product-details{
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	justify-content: flex-end;
+	padding:10px;
+	box-sizing: border-box;
+	width: 100%;
+}
+.shop-product-image-wrap{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	flex: 1 1 auto;
+	background-color: #260b26;
+}
+.shop-product-image{
+	height:100%;
+	width: auto;
+}
+.shop-product-title{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-bottom: 0px;
+	align-self: flex-start;
+	
+	margin-bottom: 10px;
+}
+.shop-product-full > h3.shop-product-title{
+	max-width: 100%;
+	margin-top:20px;
+	margin-bottom:10px;
+	
+}
+.shop-product-desc{
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.shop-products-nothing{
+	display: flex;
+	flex: 1 1 auto;
+	width: 100%;
+	box-sizing: border-box;
+	padding:100px;
+	justify-content: center;
+	align-items: center;
+	color:gray;
+}
+.shop-product-bottom{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+
+}
+.shop-product-price{
+	font-weight: bold;
+	flex:1 0;
+	min-width: 100px;
+	font-size: 16px;
+	opacity: 0.5;
+}
+.shop-product-buy{
+	display: flex;
+	justify-content: flex-end;
+	flex:1 1 auto;
+	margin-right:0px;
+}
+.shop-product-buy-button{
+	background-color:rgba(252, 225, 255,0.2);
+	color:#fff;
+	padding:10px;
+	cursor: pointer;
+
+}
+.shop-product-buy-button:hover{
+	background-color:rgb(252, 225, 0);
+	color:#000;    
+}
+.shop-product-buttons{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex:1 0 100%;
+	width: 100%;
+}
+#shop-etsy-header{
+	display:flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	padding:0px;
+	height: 50px;
+	padding-top: 0px;
+	text-align: center;
+	color:#fff;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+#shop-etsy-header-visit{
+	margin-bottom: 5px;
+}
+#shop-etsy-header > div > a{
+	margin:1px;
+}

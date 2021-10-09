@@ -1,0 +1,123 @@
+#dash-store-info{
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+#dash-stores{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.dash-store{
+	flex: 1 1 auto;
+}
+#dash-store-select{
+	display: flex;
+	height: 100%;
+	width:100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 300px;
+}
+#dash-store-select > div{
+	min-width: 180px;
+}
+
+.store-form-wrap{
+	display: flex;
+	flex-direction: column;
+}
+.store-form-content{
+	display: flex;
+	flex-direction: column;
+}
+.store-form-content-row,
+.store-form-content-row-header{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 7px;
+	width:100%;
+}
+.store-form-content-row-header{
+	font-weight: bold;
+}
+.store-form-content-row > input{
+	flex: 1 1 auto;
+	margin:0px;
+}
+.store-form-content-hours{
+	display: flex;
+	flex:1 1 auto;
+	flex-direction: row;
+	margin-top:10px;
+}
+.store-form-content-hours-wrap{
+	display: flex;
+	flex:1 1 auto;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.store-form-content-hours-days{
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	box-sizing: border-box;
+	padding:10px;
+}
+.store-form-content-hours-days:last-child{
+	
+}
+.store-form-content-hours-header{
+	font-weight: bold;
+	margin-bottom: 	0px;
+	text-align:center;
+	box-sizing: border-box;
+	padding:5px;
+	background-color: rgba(0,0,0,0.1);
+
+	
+}
+.store-form-content-hours-day{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 5px;
+	margin: 5px;
+}
+.store-form-content-hours-day > div{
+	flex: 1 1 33.3%;
+}
+.store-form-content-hours-weekday{
+}
+.store-form-content-hours-start{
+	
+}
+.store-form-content-hours-end{
+	
+}
+.store-form-content-bottom{
+	display: flex;
+	flex-direction: row;
+	margin-top:10px;
+	width: 100%;
+}
+.store-form-content-store-selector{
+	display: flex;
+	justify-content: flex-start;
+	flex:1 1 auto;
+}
+.store-form-content-store-selector > div{
+	min-width: 180px;
+}
+.store-form-timepicker{
+	max-width:120px !important;
+	margin-left:3px;
+}
+.store-form-timepicker * > input{
+	max-width:120px !important;
+
+}
+.store-form-timepicker-popup{
+	max-width:120px !important;
+}

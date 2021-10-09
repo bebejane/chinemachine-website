@@ -1,0 +1,124 @@
+#recode-wrapper{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	
+}
+#recode-top{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	margin-bottom:5px;
+}
+#recode-error{
+	display: flex;
+	flex: 1 1 auto;
+	text-align: left;
+	color:red;
+	font-weight: bold;	
+}
+#recode-login{
+	text-align: right;
+	flex: 0 1 auto;
+	cursor: pointer;
+	box-sizing: border-box;
+	font-weight: bold;
+}
+
+#recode-error{
+	display: flex;
+	flex: 1 1 auto;
+	text-align: left;
+	color:red;
+	font-weight: bold;
+	padding: 5px;
+	background-color: red;
+	color:#fff;
+}
+#recode-login{
+	text-align: right;
+	flex: 0 0 auto;
+	cursor: pointer;
+	
+	box-sizing: border-box;
+	padding: 5px;
+	background-color: #fff;
+}
+#recode-login:active{
+	background-color: #000;	
+	color:#fff;
+}
+#recode-header{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color:#fff;
+	padding:20px;
+	font-size: 16px;
+	font-weight: bold;
+	flex:0 1 auto;
+	background-color: #000;
+	text-transform: uppercase;
+}
+#recode-header-logo-wrap{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	top:0px;
+	left:0px;
+	margin:20px;
+	box-sizing: border-box;
+}
+#recode-header-logo{
+	position: relative;
+	max-width: 26px;
+	height: auto;
+	opacity: 0.95;
+}
+#recode-header-logo:hover{
+	opacity: 1;	
+}
+#recode-header-logo:active{
+	max-width: 22px;
+}
+#recode-header-border{
+	width:100%;
+	min-height: 20px;
+	max-height: 20px;
+	background-repeat: repeat-x;
+    background-image: url('../../images/jaggy-border-20px-bottom.png');
+}
+#recode-content, #recode-content > form, #recode-finished > form{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex:1 1 auto;
+	width: 100%;
+	box-sizing: border-box;
+	border:1px solid rgba(0,0,0,0.3);
+	background-color: #fff;
+}
+#recode-finished{
+	position: relative;
+	display: flex;
+	flex:1 1 auto;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+#recode-enter-email{
+	padding:20px;
+	padding-bottom: 0px;
+}
+#recode-finished-gotologin{
+	margin-top:10px;
+}

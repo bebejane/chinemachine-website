@@ -1,0 +1,27 @@
+.button{
+	background-color: rgba(0,0,0,0.2);
+	color:#000;
+	border:0px;
+	padding:10px;
+	font-size: 14px;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	min-width: 80px;
+	border:1px solid rgba(0,0,0,0.1);
+}
+.button:active{
+	opacity: 0.5;
+}
+.button[disabled]{
+	color:rgba(0,0,0,0.5);
+	opacity: 0.8 !important;
+}
+.button-loading{
+	transform: rotate(0deg);
+	animation: 0.3s linear infinite buttonloader;
+}
+@keyframes buttonloader {
+    to{
+        transform: rotate(360deg);
+    }
+}

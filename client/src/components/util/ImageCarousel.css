@@ -1,0 +1,79 @@
+.image-carousel-wrap {
+	cursor: grab;
+}
+
+.image-carousel-image {
+	height: auto;
+	width: 100%;
+}
+
+.image-carousel-image-label {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
+	flex: 1 1 auto;
+	z-index: 1;
+	width: 100%;
+	text-align: center;
+	font-family: DesdemonaBlack;
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+	padding: 10px;
+}
+
+.image-carousel-image-label-text {
+	flex: 0 0 auto;
+	background-color: #000;
+	color: #fff !important;
+	padding: 10px;
+	word-wrap: normal;
+	max-width: 80%;
+	font-family: Desdemona !important;
+}
+
+.image-carousel-dots {
+	position: absolute;
+	bottom: 40px;
+	width: 100%;
+	list-style: none;
+	z-index: 100;
+	font-family: DesdemonaBlack;
+	text-align: center;
+}
+
+.image-carousel-dots>li {
+	position: relative;
+	display: inline-block;
+	border-radius: 0px;
+	margin: 0 3px;
+	padding: 0;
+}
+
+.image-carousel-dots>li>button {
+	width: 16px;
+	height: 16px;
+	border-radius: 0px;
+	color: transparent;
+	border: 0px;
+	background-color: rgba(255, 255, 255, 0.3);
+	cursor: pointer;
+}
+
+.image-carousel-dots>li>button:hover {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.image-carousel-dots>li:hover {
+	opacity: 0.65;
+}
+
+.image-carousel-dots>li.slick-active>button {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.image-carousel-wrap > .slick-list > .slick-track{
+	display: flex;
+	align-items: center;
+}

@@ -1,0 +1,165 @@
+#dash-gallery {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: 100%;
+    width:100%;
+}
+
+#dash-gallery-form {
+    position: relative;
+    display: block;
+    lex: 1 1 auto;
+}
+
+#dash-gallery-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+#dash-gallery-wrap {
+    position: relative;
+    overflow: hidden;    
+    background-color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    align-items: center;
+    flex: 1 1 auto;
+    max-height: 600px;
+}
+#dash-gallery-label {
+    margin-top: 10px;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+#dash-gallery-label>input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#dash-gallery-bottom {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#dash-gallery-buttons {
+    flex: 0 1 auto;
+}
+
+#dash-gallery-buttons>button {
+    margin-right: 5px;
+}
+
+#dash-gallery-main-checkbox {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+}
+
+#dash-gallery-main-checkbox>input[type=checkbox] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    margin-right: 5px;
+}
+
+#dash-gallery-main-checkbox>input[type=checkbox]:active,
+#dash-gallery-main-checkbox>input[type=checkbox]:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#dash-gallery-main-checkbox>input[type=checkbox]:checked {
+    background-color: #000;
+    border: 1px solid #adb8c0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99a1a7;
+}
+.dash-gallery-header-input {
+    appearance: none;
+    padding: 3px !important;
+    padding-left: 0px !important;
+    font-size: 20px !important;
+    margin-bottom: 20px !important;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#dash-gallery-empty {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    min-height: 300px;
+}
+
+#dash-gallery-empty-upload {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#dash-gallery-empty-upload>div {
+    margin: 5px;
+}
+
+.dash-gallery-empty-upload-button {
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.dash-gallery-empty-upload-button:hover {
+    opacity: 0.8;
+}
+
+#gallery-image-upload-form-file {
+    display: none;
+}
+
+#dash-gallery-image-delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 1000;
+    padding: 20px;
+}
+#dash-gallery-image-delete:hover {
+    opacity: 1;
+}
+#dash-gallery-options{
+    display: flex;
+    flex-direction: column;
+    flex:0 0;
+    
+    margin-top:10px;
+}
+#dash-gallery-options > div{
+    flex: 0 0 auto;
+    align-items: center;
+
+}

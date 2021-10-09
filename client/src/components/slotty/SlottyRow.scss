@@ -1,0 +1,44 @@
+.slotty-row{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	bottom:0;
+	height:100%;
+	flex: 1 1 auto;
+	font-size:20px;
+	user-select:none;
+	z-index:0;
+	margin:2px;
+	padding:5px;
+	overflow-y:hidden;
+	margin-right: 0px;
+	scrollbar-width: none;
+	
+	&::-webkit-scrollbar{
+		display:none;
+	}
+	&:last-child{
+		margin-right:0px !important;
+	}
+	&:last-child{
+		border-right:0px;
+	}
+}
+
+.slotty-content{
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+	justify-content:center;
+	width:100%;
+}
+.slot-stopped{
+	color:red !important;
+}
+.slot-winner{
+	color:green !important;
+}
+.slot-stopped, .slot-winner{
+	
+}

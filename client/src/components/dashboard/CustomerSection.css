@@ -1,0 +1,104 @@
+#dash-customer-section{
+	position: relative;
+	display: block;
+	flex-direction:column;
+	max-width: 600px;
+	flex:1 1 auto;
+}
+.dash-customer-group{
+	display: flex;
+	flex-direction:column;
+	margin-bottom: 20px;	
+}
+.dash-customers{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.dash-customer-wrap{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 5px;
+}
+.dash-customer-details{
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+.dash-customer-name{
+	font-weight: bold;
+	text-align: left;
+}
+.dash-customer-email{
+	flex: 1 1 auto;
+}
+
+.dash-customer-details > div > a{
+	color: #000;
+	text-decoration: underline !important;
+}
+.dash-customer-delete{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: right;
+	flex: 0 0;
+	opacity: 0.3;
+	font-size: 22px;
+}
+.dash-customer-delete:hover{
+	opacity: 1;
+}
+.dash-customer-delete:active{
+	opacity: 0.3;
+}
+#dash-customer-add{
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+}
+#dash-customer-add-header{
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	margin-bottom: 5px;
+}
+#dash-customer-add-header > *{
+	user-select: none;	
+}
+
+.dash-customer-add-header-toggle{
+	margin-left:5px;
+	color: #ffe40b;	
+	font-size: 18px;
+
+}
+.dash-customer-form-hidden{
+	display: none !important;
+}
+
+#dash-customer-role{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	display: flex;
+}
+#dash-customer-role > div{
+	flex:1 1 auto;
+}
+#dash-customer-form{
+	display: flex;
+	flex-direction: column;
+	flex:0 1;
+}
+#dash-customer-form > *{
+	margin-bottom: 10px;
+}
+#dash-customer-form > input{
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+#dash-customer-save{
+	margin-top:0px;
+}
+#dash-customer-search-form{
+	margin-bottom: 10px;
+}

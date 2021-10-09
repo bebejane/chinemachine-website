@@ -1,0 +1,22 @@
+#bottom-bar {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;    
+  padding:0px;
+  box-sizing: border-box;
+  background-color: #000;
+  color:#fff;
+  flex: 1 1 auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+#bottom-sections{
+	position: relative;
+  display: flex;
+  flex-direction: column;
+  padding:0px;
+  box-sizing: border-box;
+  background-color: #000;
+  color:#fff;
+  flex: 0 1 auto;
+}

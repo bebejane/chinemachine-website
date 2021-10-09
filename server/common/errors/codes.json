@@ -1,0 +1,191 @@
+{
+	"INVALID_LOGIN":{
+		"code":1000,
+		"message":{
+			"en": "Invalid login",
+			"fr": "Identifiant invalide"
+		}
+	},
+	"INVALID_PASSWORD":{
+		"code":1001,
+		"message":{
+			"en": "Invalid password",
+			"fr": "Mot de passe incorrect"
+		}
+	},
+	"UNAUTHORIZED_ACCESS":{
+		"code":1002,
+		"message":{
+			"en": "Unauthorized access",
+			"fr": "L'accès non autorisé"
+		}
+	},
+	"USER_NOT_ACTIVATED":{
+		"code":1003,
+		"message":{
+			"en": "User account not activated yet. Please check your email to verify your account",
+			"fr": "Compte utilisateur pas encore activé. Veuillez vérifier votre courrier électronique pour vérifier votre compte"
+		}
+	},
+	"USER_NOT_FOUND":{
+		"code":1004,
+		"message":{
+			"en": "User account not found",
+			"fr": "Compte utilisateur introuvable"
+		}
+	},
+	"PASSWORD_INCORRECT":{
+		"code":1005,
+		"message":{
+			"en": "Password incorrect",
+			"fr": "Mot de passe incorrect"
+		}
+	},
+	"FAILED_TO_SIGN_TOKEN":{
+		"code":1006,
+		"message":{
+			"en": "Failed to sign token",
+			"fr": "Échec de la signature du jeton"
+		}
+	},
+	"INVALID_SECURITY_CODE":{
+		"code":1007,
+		"message":{
+			"en": "Security code is invalid",
+			"fr": "Le code de sécurité est invalide"
+		}
+	},
+	"INVALID_EMAIL":{
+		"code":1008,
+		"message":{
+			"en": "Invalid e-mail address",
+			"fr": "Adresse e-mail invalide"
+		}
+	},
+	"FAILED_CREATE_ACCOUNT":{
+		"code":1009,
+		"message":{
+			"en": "Failed to create user account",
+			"fr": "Échec de la création du compte utilisateur"
+		}	
+	},
+	"USER_ALREADY_EXISTS":{
+		"code":1010,
+		"message":{
+			"en": "User already exists",
+			"fr": "L'utilisateur existe déjà"
+		}	
+	},
+	"FAILED_SEND_EMAIL":{
+		"code":1011,
+		"message":{
+			"en": "Failed to send e-mail",
+			"fr": "Échec de l'envoi de l'e-mail"
+		}	
+	},
+	"USER_ALREADY_ACTIVE_OR_CODE_EXPIRED":{
+		"code":1012,
+		"message":{
+			"en": "User already active or security code is invalid or expired",
+			"fr": "L'utilisateur est déjà actif ou le code de sécurité est invalide ou a expiré"
+		}
+	},
+	"USER_ALREADY_ACTIVE":{
+		"code":1013,
+		"message":{
+			"en": "User account is already active",
+			"fr": "Le compte utilisateur est déjà actif"
+		}
+	},
+	"FAILED_VERIFY_ACCOUNT_TOKEN":{
+		"code":1014,
+		"message":{
+			"en": "Failed to verify account. Token not valid.",
+			"fr": "Échec de la vérification du compte. Jeton non valide."
+		}	
+	},
+	"FAILED_ACTIVATE_ACCOUNT":{
+		"code":1015,
+		"message":{
+			"en": "Failed to activate account",
+			"fr": "Échec de l'activation du compte"
+		}		
+	},
+	"PASSWORD_DOES_NOT_MATCH":{
+		"code":1016,
+		"message":{
+			"en": "Password does not match each other",
+			"fr": "Le mot de passe ne correspond pas"
+		}
+	},
+	"INVALID_PASSWORD_FORMAT":{
+		"code":1017,
+		"message":{
+			"en": "Password must be minimum eight characters, at least one letter and one number",
+			"fr": "Le mot de passe doit comporter au moins huit caractères, au moins une lettre et un chiffre"
+		}
+	},
+	"INVALID_EMAIL_FORMAT":{
+		"code":1018,
+		"message":{
+			"en": "Invalid e-mail address",
+			"fr": "Adresse e-mail invalide"
+		}
+	},
+	"EMAIL_DOES_NOT_MATCH":{
+		"code":1019,
+		"message":{
+			"en": "E-mail adresses does not match",
+			"fr": "Les adresses e-mail ne correspondent pas"
+		}
+	},
+	"INVALID_FIRST_NAME":{
+		"code":1020,
+		"message":{
+			"en": "Invalid first name",
+			"fr": "Prénom invalide"
+		}
+	},
+	"INVALID_LAST_NAME":{
+		"code":1021,
+		"message":{
+			"en": "Invalid last name",
+			"fr": "Nom de famille invalide"
+		}
+	},
+	"INVALID_PHONE":{
+		"code":1022,
+		"message":{
+			"en": "Invalid phone number",
+			"fr": "Numéro de téléphone invalide"
+		}
+	},
+	"APPOINTMENT_BOOKING_ILLIGAL_DATE":{
+		"code":1023,
+		"message":{
+			"en": "You have already booked an appointment within 7 days of this date",
+			"fr": "Vous avez déjà réservé un rendez-vous dans les 7 jours suivant cette date"
+		}
+	},
+	"APPOINTMENT_ALREADY_BOOKED":{
+		"code":1024,
+		"message":{
+			"en": "Appointment has already been booked for this time! Please select another time",
+			"fr": "Le rendez-vous a déjà été réservé pour cette fois! Veuillez sélectionner une autre heure"
+		}
+	},
+	"ACCESS_DENIED":{
+		"code":1025,
+		"message":{
+			"en": "Access denied",
+			"fr": "Accès refusé"
+		}
+	},
+	"LOGIN_EXPIRED":{
+		"code":1026,
+		"message":{
+			"en": "Login expired",
+			"fr": "Connexion expirée"
+		}
+	}
+}

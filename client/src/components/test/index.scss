@@ -1,0 +1,57 @@
+@import 'media.scss';
+
+
+body{
+	overflow: hidden !important;	
+	max-width:100%;
+	max-height:100%;
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+}
+#test{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #fff;
+  color:#000;
+  overflow:hidden;
+
+  $pixels: 1440;
+	$count: 1;
+	$bgColor: #91f2b3;
+	$colors: ();
+
+	@for $p from 1 through 100 {
+		$c: lighten($bgColor, $p*0.2%);
+		$colors: append($colors, $c);
+	}
+
+	@while $count <= length($colors) {
+  	$color: nth(nth($colors, $count),1);
+  	$px: floor(($count/100)*$pixels);
+  	//@debug $color;
+  	@media screen and (min-width: #{$px}px){
+  		background-color:$color;
+  	}
+
+  	$count: $count + 1;
+
+	}
+}
+
+#status{
+	//display:none;
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	padding:20px;
+	text-align: right;
+	box-sizing:border-box;
+	color:#fff;
+}

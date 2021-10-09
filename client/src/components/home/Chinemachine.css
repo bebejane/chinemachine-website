@@ -1,0 +1,35 @@
+#chinemachine-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+	height: auto;
+	width: 50%;
+	flex: 0 1 auto;
+}
+#chinemachine-wrap:active{
+
+}
+.cm-punch {
+	animation: cm-punch 0.7s steps(16, end) 1 !important;
+}
+.chinemachine, .cm-punch {
+	width: 100%;
+	animation: cm-spinner 2s steps(4, end) 1;
+}
+@keyframes cm-spinner {
+	to{
+		transform: rotate(-360deg);
+		filter: grayscale(100%);
+	}
+}
+@keyframes cm-punch {
+	from{
+		width: 100%;
+	}
+	to{
+		width: 50%;
+		transform: rotate(-360deg);
+
+	}
+}

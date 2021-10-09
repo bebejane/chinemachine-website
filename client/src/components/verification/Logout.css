@@ -1,0 +1,22 @@
+#logout-wrapper{
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 auto;
+	justify-content: flex-start;
+	width: 100%;
+	
+}
+#logout-content{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex:1 1 auto;
+	width: 100%;
+	box-sizing: border-box;
+	border:1px solid rgba(0,0,0,0.3);
+	background-color: #fff;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	min-height: 200px;
+}

@@ -1,0 +1,27 @@
+#dash-language-selector{
+	display: flex;
+	flex:1 1 auto;
+	justify-content: flex-end;
+}
+#dash-language-select{
+	flex: 1 1;
+	max-width: 130px;
+	height:100%;
+	min-height:43px;
+	
+	font-family: Lato;
+}
+#dash-language-select > div{
+	min-height: 100%;
+}
+.dash-language-flag, .dash-language-flag-enabled{
+	margin:0px;
+	margin-left:5px;
+	width:24p;
+	height:16px;
+	opacity:0.3;
+	cursor: pointer;
+}
+.dash-language-flag-enabled{
+	opacity:1;
+}

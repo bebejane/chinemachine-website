@@ -1,0 +1,207 @@
+#account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    box-sizing: border-box;
+    min-height: 100%;
+}
+#account > * input{
+	padding:10px;
+	padding-left: 0px;
+	box-sizing: border-box;
+	border:0px;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	outline: none;
+	background-color:rgba(255,255,255,0.9);
+	opacity: 1;
+	width:100%;
+	font-size: 14px;
+}
+#account-wrap {
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    background-color: #fff;
+    padding:0px;
+    height:100%;
+    width:100%;
+    box-sizing: border-box;
+}
+#account-select{
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    box-sizing: border-box;	
+}
+#account-header{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 auto;
+	width:100%;
+	justify-content: center;
+	align-items: center;
+	min-height: 50px;
+	padding:20px;
+	box-sizing: border-box;
+	background-color: #000;
+	color:#fce100;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#account-header-logo-wrap{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	top:0px;
+	left:0px;
+	box-sizing: border-box;
+}
+#account-header-logo{
+	position: relative;
+	max-width: 26px;
+	height: auto;
+	opacity: 0.95;
+}
+#account-header-logo:hover{
+	opacity: 1;	
+}
+#account-header-logo:active{
+	max-width: 22px;
+}
+#account-header-title{
+	flex: 1 1 auto;
+	text-align: center;
+}
+#account-header-logout{
+	position: relative;
+	display: flex;
+	flex: 0 0 auto;
+	justify-content: flex-end;
+	align-items: center;
+	z-index: 10;
+	top:0px;
+	right:0px;
+	
+	color:#fff;
+	font-size: 26px;
+	line-height: 1;
+	box-sizing: border-box;
+}
+#account-header-logout > a{
+	color:#fff !important;
+}
+#account-border{
+	width:100%;
+	min-height: 20px;
+	background-repeat: repeat-x;
+    background-image: url('../../images/jaggy-border-20px-top.png');   
+}
+#account-content-wrap{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	width:100%;
+	min-height: 100%;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin:10px;
+	width:100%;
+	
+}
+#account-content-wrap > div{
+	padding:10px;
+	box-sizing: border-box;
+	margin-top:0px;
+	margin-bottom:20px;
+}
+#account-content{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	height:100%;
+	width:100%;
+	box-sizing: border-box;
+	padding:0px;
+}
+#account-appointments{
+	flex: 1 1 auto;
+	width:100%;
+	box-sizing: border-box;
+}
+.account-appointment{
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+.account-appointment-wrap{
+	margin-bottom: 11px;
+}
+.account-appointment-time{
+	font-weight: bold;
+}
+#account-details{
+	flex:1 1 auto;
+	width:100%;
+}
+#account-details-wrap{
+	flex:1 1 auto;
+	width:100%;
+}
+#account-details-wrap > * input{
+
+}
+.account-error{
+	color:red !important;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+	#dash-nav-wrap{
+		position: absolute !important;
+		
+	}
+	.dash-nav-wrap-inactive > #dash-nav-border{
+		display: none !important;
+	}
+	#dash-nav{
+		font-size: 16px;
+	}
+	#dash-content-wrap{
+		padding-left:10px !important;
+		
+	}
+	#dash-home > div{
+		flex:1 1 auto !important;
+		max-width: 100% !important;
+		min-height: auto !important
+	}
+
+}
+@media (min-width: 767px)  {
+	#dash-nav-drawbar{
+		display: none !important;
+	}
+	.dash-nav-drawbar-active{
+		display: none !important;
+	}
+	
+	.dash-nav-inactive{
+		animation: none !important;
+		margin-left:0px !important;
+	}
+	#dash-content-wrap{
+
+		padding:50px !important;	
+		padding-top:20px !important;
+	}
+	#dash-home > div {
+		max-width: 50%;
+	}
+	#account > * input{
+		max-width: 400px !important;
+	}
+}

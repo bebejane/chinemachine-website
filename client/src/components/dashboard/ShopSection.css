@@ -1,0 +1,132 @@
+#dash-shop{
+    position: relative;
+    flex: 1 1 auto; 
+    display: block;
+    flex-direction: column;
+}
+.dash-shop-product-wrap{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex:1 1;
+    
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box;
+}
+.dash-shop-product, .dash-shop-product-full{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex:0 1;
+    padding:5px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    box-sizing: border-box;
+    cursor: pointer;
+    user-select: none;
+    max-width: 33.3%;
+    box-sizing: border-box; 
+}
+.dash-shop-product:hover{
+    background-color: rgba(0,0,0,0.05);
+}
+.dash-shop-product-full{
+    
+    display: flex;
+    flex-direction: column;
+    flex:1 1 auto;
+    width: 100%;
+    margin-top: 50%;
+    max-width: 100%;  
+    z-index: 10;
+    margin:0px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.2);
+    padding:0px;
+    min-width: 100% !important;
+}
+.dash-shop-product-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    min-height: 140px;
+
+}
+.dash-shop-product-image > img{
+    
+    
+}
+.dash-shop-product-full > img{
+
+}
+.dash-shop-product-details{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex:1 1 auto;
+    padding:10px;
+    
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.dash-shop-product-title{
+    
+    
+    padding: 5px;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-height: 60px;
+    width: 100%;
+ 
+}
+.dash-shop-product-desc{
+    
+    margin-top:10px;
+}
+.dash-shop-product-price{
+    display: flex;
+    flex:1 1 auto;
+    align-items: flex-end;
+    font-weight: bold;
+    margin-top:10px;
+}
+.dash-shop-product-toggle{
+    
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex:1 1 auto;
+    min-height:100%;
+    margin:0px;
+    min-height:20px;
+    min-width:20px;
+    
+}
+.dash-shop-product-buttons{
+    display: flex;
+    flex-direction: row;
+    flex:1 1 auto;
+    margin-top:10px;
+}
+.dash-shop-product-buttons-right{
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.dash-shop-product-buttons-left{
+    flex: 0 1 auto;
+
+}

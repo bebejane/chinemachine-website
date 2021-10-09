@@ -1,0 +1,191 @@
+#store-info {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex: 0 1 auto;
+	padding: 10px;
+	padding-bottom: 0px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	text-transform: uppercase;
+}
+#store-info-right,
+#store-info-left {
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 auto;
+}
+#store-info-right > div,
+#store-info-left > div {
+	flex: 0 1 auto;
+}
+
+#store-info-right {
+	text-align: right;
+	flex: 1 0 auto;
+	max-width: 50%;
+}
+#store-info-left {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	max-width: auto;
+}
+#store-info-right-top {
+	display: flex;
+	flex: 1 1 auto;
+	height: 100%;
+	justify-content: flex-start;
+	align-items: flex-end;
+	flex-direction: column;
+}
+.store-info-details {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+.store-info-details-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.store-info-address {
+}
+.store-info-city,
+.store-info-phone {
+}
+
+.store-info-selling-hour {
+	margin-bottom: 10px;
+}
+.store-info-openning-hours {
+	margin-top: 5px;
+}
+.store-info-hour-wrap {
+	margin-bottom: 5px;
+}
+.store-info-hour-wrap:last-child {
+	margin-bottom: 0px;
+}
+.store-info-status {
+	margin-top: 5px;
+	color: #fce100;
+	text-transform: none;
+	max-width: 200px;
+	opacity: 1;
+}
+
+.store-info-booknow {
+	flex: 0 1 auto;
+}
+
+.app-link {
+	margin-right: 4px;
+}
+.app-link:last-child {
+	margin-right: 0px;
+}
+
+#i_fb {
+	background-image: url('../../images/icons/fb.png');
+}
+
+#i_ig {
+	background-image: url('../../images/icons/ig.png');
+}
+
+#i_em {
+	background-image: url('../../images/icons/em.png');
+}
+
+#i_ph {
+	background-image: url('../../images/icons/ph.png');
+}
+
+.icon {
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	cursor: pointer;
+	opacity: 1;
+	filter: invert(1);
+}
+
+.icon:hover {
+}
+#store-info-by-appointment {
+	opacity: 0.8;
+	text-transform: lowercase;
+}
+#store-info-appointment-button {
+	display: inline-block;
+	margin-top: 10px;
+	background-color: #fce100;
+	color: #000;
+	border: 0px;
+	padding: 0px;
+	font-size: 14px;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	font-weight: bold;
+	flex: 0;
+	text-align: center;
+	margin-top: 20px;
+}
+#store-info-appointment-button:active {
+	background-color: #fff38e;
+}
+
+.store-info-hours {
+	margin-bottom: 10px;
+}
+#store-info-borders {
+	width: 100%;
+	background-color: #fff;
+}
+#store-info-border-bottom {
+	width: 100%;
+	min-height: 20px;
+	background-repeat: repeat-x;
+	background-image: url('../../images/jaggy-border-20px-bottom.png');
+	margin-top: 5px;
+}
+#store-info-border-top {
+	width: 100%;
+	min-height: 20px;
+	background-repeat: repeat-x;
+	transform: rotate(180deg);
+	background-image: url('../../images/jaggy-border-20px-bottom.png');
+}
+#store-info-bottom {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	margin: 20px;
+	margin-top: 10px;
+	align-items: center;
+}
+#store-info-onlinestores {
+	display: flex;
+	flex: 1 1 50%;
+	align-items: center;
+	margin-bottom: 10px;
+}
+#store-info-onlinestores > a {
+	margin-right: 5px;
+}
+#store-info-social {
+	display: flex;
+	flex: 1 1 50%;
+	justify-content: flex-end;
+	flex-direction: row;
+	flex: 1 1 auto !important;
+	text-align: left;
+	height: 100%;
+}

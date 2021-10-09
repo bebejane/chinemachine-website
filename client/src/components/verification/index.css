@@ -1,0 +1,76 @@
+#verification{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	min-width: 100%;
+	padding:20px;
+	min-height: 100%;
+	box-sizing: border-box;
+	background: url('../../images/verification-bg.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#verification > div{
+	max-width: 400px;
+}
+#verification > * input{
+	padding:10px;
+	box-sizing: border-box;
+	font-size: 16px;
+	border:0px;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+	outline: none;
+	margin:10px;
+	background-color:rgba(255,255,255,0.9);
+	opacity: 1;
+}
+#verification > * input:autofill, 
+#verification > * input:autofill:focus,
+#verification > * input:-moz-autofill, 
+#verification > * input:-moz-autofill:focus{
+	background-color: #fff !important;
+	-webkit-text-fill-color: #fff !important;
+	-moz-text-fill-color: #fff !important;
+	border:1px solid rgba(0,0,0,0.1);
+	border-top:0px;
+	outline: none;
+}
+#verification > * button{
+	margin-top:3px !important;
+	outline: none;
+}
+#verification-version{
+	margin-top:10px;
+	color:rgba(0,0,0,1);
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #fff;
+	padding: 5px;
+}
+#verification-version:before{
+	content:"Ver. ";
+}
+#verification-bubbles{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 10px;
+}
+.verification-bubble{
+	
+	background-color: #fff;	
+	padding:10px;
+	color:rgba(0,0,0,0.8);
+	cursor: pointer;
+	margin:2px;
+	border:0px solid rgba(0,0,0,0.1);
+	font-weight: bold;
+
+
+}
+.verification-bubble:hover, .verification-bubbl:active{
+	color:rgba(0,0,0,1);
+}

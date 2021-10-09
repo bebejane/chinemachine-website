@@ -1,0 +1,118 @@
+.info-block {
+	display: flex;
+	position: relative;
+	align-items: center;
+	flex-direction: column;
+	padding: 0px;
+	margin: 0px;
+	flex: 0 1 auto;
+	background-color: #000;
+	color: #fff;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding-bottom: 0px;
+}
+
+.info-block-top {
+	display: flex;
+	flex: 1 1 auto;
+	width:100%;
+	position: relative;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	outline: none;
+}
+
+.info-block-header,
+.info-block-header-active{
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	padding-top: 16px;
+	font-family: GothamBold;
+	font-size: 13px;
+	text-transform: uppercase;
+	text-align: center;
+	width: 100%;
+	color: #fff;
+	user-select: none;
+	box-sizing: border-box;
+}
+.info-block-header:hover {
+	cursor: pointer;
+	color:#fff;
+}
+.info-block-header:active {
+	cursor: pointer;
+	color:#f5db00;
+}
+.info-block-header-active{
+	color:#f5db00
+}
+.info-block-open {
+	border-bottom: 0px;
+}
+
+.info-block-nopad {
+	padding: 0px !important;
+}
+
+.info-block-expand {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	font-size: 20px;
+	margin: 0px;
+	margin-right: 10px;
+	margin-top:0px;
+	opacity: 0.3;
+	color:#fff;
+	height: 100%;
+}
+
+.info-block-expand:hover {
+	opacity: 0.8;
+}
+
+.info-block-content, .info-block-content-hidden {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	width:100%;
+	box-sizing: border-box;
+	min-height: 60px;
+
+}
+.info-block-border-dbl {
+	width:100%;
+	min-height: 17px;
+	background-repeat: repeat-x;
+	background-image: url('../../images/jaggy-border-12px-dbl.png');
+	background-color: #fff;
+	background-position: bottom;
+	opacity: 1;
+}
+.info-block-border-bottom {
+	width:100%;
+	min-height: 20px;
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-color: #000 !important;
+	background-image: url('../../images/jaggy-border-20px-bottom-white.png');
+	margin-top: 5px;
+	background-color: #fff;
+}
+.info-block-border-top {
+	width:100%;
+	min-height: 20px;
+	background-repeat: repeat-x;
+	transform:rotate(180deg);
+	background-image: url('../../images/jaggy-border-20px-top.png');
+	background-color: #fff;
+}

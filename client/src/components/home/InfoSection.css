@@ -1,0 +1,23 @@
+#info-section{
+
+}
+.info-section-content{
+	padding:10px;
+	flex: 1;
+	display: flex;
+	margin:0px;
+	flex-flow: column nowrap;
+	margin-bottom:10px;
+}
+.info-section-content * > .ql-editor{
+	padding:0px !important;
+}
+.ql-bubble .ql-editor h1 {
+	font-size: 18px !important;
+}
+.ql-bubble .ql-editor h2 {
+	font-size: 14px  !important;   
+}
+.ql-bubble .ql-editor h3 {
+	font-size: 11px  !important;
+}

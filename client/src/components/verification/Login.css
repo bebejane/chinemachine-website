@@ -1,0 +1,115 @@
+#login-wrapper{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 0 1 auto;
+	justify-content: flex-start;
+	width: 100%;
+}
+#login-top{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	margin-bottom:5px;
+}
+#login-error{
+	display: flex;
+	flex: 0 1 auto;
+	text-align: left;
+	color:red;
+	font-weight: bold;
+	padding: 5px;
+	background-color: red;
+	color:#fff;
+}
+#login-spacer{
+	flex: 1 1 auto;
+	
+}
+#login-signup,#login-logout{
+	text-align: right;
+	flex: 0 1 auto;
+	cursor: pointer;
+	text-align: right;
+	box-sizing: border-box;
+	padding: 5px;
+	background-color: #fff;
+	font-weight: bold;
+
+}
+#login-signup:active{
+	background-color: #000;	
+	color:#fff;
+}
+#login-header{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color:#fff;
+	padding:20px;
+	font-size: 16px;
+	font-weight: bold;
+	flex:0 1 auto;
+	background-color: #000;
+	text-transform: uppercase;
+}
+#login-header-border{
+	width:100%;
+	min-height: 20px;
+	max-height: 20px;
+	background-repeat: repeat-x;
+    background-image: url('../../images/jaggy-border-20px-bottom.png');
+}
+#login-header-logo-wrap{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+	top:0px;
+	left:0px;
+	margin:17px;
+	box-sizing: border-box;
+}
+#login-header-logo{
+	position: relative;
+	max-width: 26px;
+	height: auto;
+	opacity: 0.95;
+}
+#login-header-logo:hover{
+	opacity: 1;	
+}
+#login-header-logo:active{
+	max-width: 22px;
+}
+#login-content, #login-content > form{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex:1 1 auto;
+	width: 100%;
+	box-sizing: border-box;
+	border:1px solid rgba(0,0,0,0.3);
+	background-color: #fff;
+}
+
+#login-loggedin{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 auto;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+#login-loggedin-message{
+
+}
+#login-loggedin-logout{
+	margin-top: 20px;
+}

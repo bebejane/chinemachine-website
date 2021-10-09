@@ -1,0 +1,138 @@
+@font-face {
+	font-family: 'DesdemonaBlack';
+	src: url('/fonts/DesdemonaBlack.woff');
+}
+
+@font-face {
+	font-family: 'GothamBold';
+	src: url('/fonts/GothamBold.woff');
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Regular.woff');
+}
+
+@font-face {
+	font-family: 'LatoLight';
+	src: url('/fonts/Lato-Light.woff');
+}
+
+html {
+	height: 100%;
+	margin: 0px;
+	overscroll-behavior-y: contain;
+}
+
+body {
+	height: 100%;
+	font-size: 14px;
+	font-family: Lato, sans-serif;
+	font-weight: 200;
+	letter-spacing: 0.05em;
+	line-height: 1.2;
+	margin: 0px;
+	padding: 0px;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-overscroll-behavior-y: contain;
+	overscroll-behavior-y: contain;
+	-webkit-overscroll-behavior: contain;
+	overscroll-behavior: contain;
+}
+::-webkit-scrollbar {
+	display: none !important;
+	width: 0px !important;
+}
+a {
+	color: #ead200;
+	text-decoration: none !important;
+	outline: none;
+}
+
+a:hover {
+	color: #fce100 !important;
+}
+a:visited {
+	border: 0px;
+}
+a:active {
+	border: 0px;
+}
+
+ul {
+	margin: 0px;
+	padding-left: 20px;
+}
+
+li {
+	list-style-type: square;
+	margin-bottom: 5px;
+}
+
+h1,
+h2,
+h3 {
+	font-family: GothamBold;
+	font-weight: normal;
+	margin: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 24px;
+	color: #fce100;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+img {
+	margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus,
+input:-moz-autofill:active {
+	-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.faded {
+	color: rgba(255, 255, 255, 0.5);
+	line-height: normal;
+}
+
+.yellow {
+	color: #fce100;
+}
+
+.subyellow {
+	color: #ffc600;
+}
+
+.noscroll {
+	pointer-events: none;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

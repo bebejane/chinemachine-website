@@ -1,0 +1,26 @@
+.button{
+	background-color: #000;
+	color:#fff;
+	border:0px;
+	padding:13px;
+	font-size: 14px;
+	box-sizing: border-box;
+	text-transform: uppercase;
+	min-width: 100px;
+}
+.button:active{
+	opacity: 0.5;
+}
+.button[disabled]{
+	color:rgba(255,255,255,.8);
+	opacity: 0.5 !important;
+}
+.button-loading{
+	transform: rotate(0deg);
+	animation: 0.3s linear infinite buttonloader;
+}
+@keyframes buttonloader {
+    to{
+        transform: rotate(360deg);
+    }
+}

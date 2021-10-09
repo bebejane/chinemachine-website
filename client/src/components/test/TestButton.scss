@@ -1,0 +1,73 @@
+//@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Marcellus&display=swap');
+@import 'media.scss';
+@import "bourbon";
+@use 'sass:math';
+
+.test-button {
+	padding:40px;
+	background-color: #000;
+	color: #fff;
+	font-family: 'Audiowide', cursive;
+	user-select: none;
+	line-height: 1;
+	max-width:100%;
+	cursor: grab;
+	border-style: solid;
+	border-width: 10px;
+	z-index:10;
+	&:active {
+		color: #fff;
+		cursor: grabbing;
+	}
+	$clicks: 10;
+	$pixels: 1440;
+	$fontColor: rgb(155, 100, 100);
+	$bgColor: rgb(2, 4, 3);
+
+	@for $px from 1 through $pixels {
+		$perc: min(floor((($px/$pixels) * 50)), 50) * 1%;
+		@media screen and (width: #{$px}px) {
+			color: darken($fontColor, $perc);
+			font-size: floor((($px/$pixels) * 50)) * 2px;
+		}
+	}
+	@for $click from 0 through $clicks {
+		&.click-#{$click}{
+			$perc: floor((($click/$clicks) * 20)) * 1%;
+			@include border-color(darken(#76cd9c,$perc) darken(#76cd9c, $perc) lighten(#76cd9c,$perc) lighten(#76cd9c, $perc));
+		}	
+	}
+	/*
+  @include respond-below(xs) {
+		color: purple;
+		font-size:1rem;  	
+  }
+  @include respond-above(xs) {
+		color: green;  	
+		font-size:4rem;  	
+  }
+  @include respond-above(sm) {
+		color: pink;  	
+		font-size:15rem;  	
+  }
+  @include respond-above(md) {
+		color: white;  	
+		font-size:6rem;  	
+  }
+  @include respond-above(lg) {
+		color: red;
+		font-size:8rem;  	
+  }
+  */
+}
+
+
+#dot{
+	position:absolute;
+	min-width:10px;
+	max-width:10px;
+	width:10px;
+	height:10px;
+	background-color:pink;
+}

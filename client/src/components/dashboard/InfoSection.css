@@ -1,0 +1,95 @@
+#dash-info-section{
+	position: relative;
+	display: flex;
+	flex-direction:column;
+}
+#dash-info-section-top{
+	display: flex;
+	flex-direction:row;
+	flex: 1 1 auto;
+	align-items: center;
+	margin-bottom: 5px;
+}
+#dash-info-section-bottom{
+	position: relative;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: row;
+	margin-top: 10px;
+}
+#dash-info-section-bottom > div{
+	margin-right:5px;
+}
+#dash-info-section-bottom > div:last-child{
+	margin-right:0px;
+}
+.dash-info-section{
+	display: flex;
+	flex-direction: row;
+}
+#dash-info-name-header{
+	flex:1 1 auto;	
+}
+.dash-info-header-input{
+	appearance:none;
+	padding: 3px !important;
+	padding-left: 0px !important;
+	font-size: 20px !important;
+	margin-bottom: 20px !important;
+	outline: none;
+	box-shadow: none;
+	border:none;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+
+}
+#dash-info-section-editor-wrap{
+	display: flex;
+	flex-direction: column;
+	height:400px;
+	min-height: 400px;
+	max-height: 400px;
+	width:100%;
+	flex: 1 1 auto;
+}
+.dash-info-section-editor{
+	
+}
+#quill-editor{
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+  	flex-flow: column nowrap;
+  	max-height: 400px;
+}
+#quill-editor > .ql-container{
+	display: flex;
+	flex: 1 1 auto;
+	overflow-y: auto;
+	height:100%;
+}
+#quill-editor > .ql-container > .ql-editor{
+	width:100%;
+	height: 100%;
+}
+.ql-snow .ql-editor h1 {
+    font-size: 18px !important;
+}
+.ql-snow .ql-editor h2 {
+ 	font-size: 14px  !important;   
+}
+.ql-snow .ql-editor h3 {
+    font-size: 11px  !important;
+}
+
+#dash-info-options{
+    display: flex;
+    flex-direction: row;
+    flex:0 0;
+    align-items: center;
+    margin-top:10px;
+}
+#dash-info-options > div{
+    flex: 0 0 auto;
+    align-items: center;
+
+}

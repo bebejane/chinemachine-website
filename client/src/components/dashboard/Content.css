@@ -1,0 +1,76 @@
+#dash-content{
+	position: relative;
+	display: flex;
+	width:100%;
+	flex-direction: column;
+	overflow: hidden;
+	overflow-y:scroll;
+	padding:0px;
+	box-sizing: border-box;
+}
+#dash-content-header{
+	position: relative;
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-sizing: border-box;
+	color:#000;
+	margin-bottom:20px;
+	background-color: #ffe40b;
+	padding:10px;
+	padding-top: 12px;
+	font-size: 30px !important;
+	min-height: 54px;	
+	font-family: GothamBold;
+}
+#dash-content-name-form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width:100%;
+	height:56px;
+	background-color: #ffe40b;
+}
+#dash-content-name{
+	font-weight: bold;
+	padding:10px;
+	width:100%;
+	background-color: #ffe40b;
+	width: 100%;
+	color:#000;
+	text-align: center;
+	border:0px;
+	font-size: 22px !important;
+	box-sizing: border-box;
+	border: 0px !important;
+}
+#dash-content-name:focus{
+	background-color: #ffe40b;
+}
+#dash-content-name::selection{
+	background-color: orange;	
+}
+#dash-content-wrap{
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex:1 1 auto;
+	padding:0px;
+}
+#dash-content-name-border{
+	position: absolute;
+	bottom:-20px;
+	width:100%;
+	min-height: 20px;
+	background-repeat: repeat-x;
+    background-image: url('../../images/jaggy-border-dashboard-yellow.png');
+    z-index: 100;
+}

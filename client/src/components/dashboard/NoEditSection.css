@@ -1,0 +1,8 @@
+#dash-empty{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex:1 1  auto;
+	height:100%;
+	width: 100%;
+}

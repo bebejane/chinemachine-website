@@ -1,0 +1,72 @@
+#dictionary{
+
+}
+#dictionary-top{
+	display: flex;
+	flex-direction: column;
+	flex:1 1 auto;
+}
+#dictionary-bottom{
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+#dictionary-terms{
+	display: table;
+	width:100%;
+	text-align: left;
+}
+#dictionary-terms > tr > td {
+	
+}
+#dictionary-terms * > input{
+	width:100%;
+	box-sizing: border-box;
+	outline: none;
+	margin-bottom: 10px;
+}
+
+.dictionary-term-key{
+
+}
+.dictionary-term-value{
+	width:100%;
+}
+.dictionary-term-value-input{
+	
+}
+.dictionary-term-delete{
+	font-size: 30px;
+	opacity: 0.2;
+	cursor: pointer;
+}
+.dictionary-term-delete:hover{
+	opacity: 0.4;
+}
+
+#dictionary-save{
+	
+}
+#dictionary-add{
+	display: flex;
+	flex: 1 1 auto;
+	margin-top:10px;
+	
+}
+#dictionary-add > form {
+	display: flex;
+	flex: 1 1 auto;
+	
+}
+#dictionary-add > form > input{
+	flex: 1 1 auto;
+	max-width: 100%;
+}
+#add-term-form > button {
+	margin-right:10px;
+}
+
+
