@@ -24,6 +24,7 @@ const start = async () => {
 	console.log('Server running on port', port);
 	console.log('NODE_ENV=', process.env.NODE_ENV);
 	refreshShopProducts();
+	
 };
 const connectDatabase = () => {
 	return db.connect().then((mongoose) => {

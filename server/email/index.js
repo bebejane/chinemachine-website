@@ -2,15 +2,27 @@ const moment = require('moment-timezone');
 const nodemailer = require('nodemailer');
 const dictionaryController = require('../controllers/dictionary');
 const sgTransport = require('nodemailer-sendgrid-transport');
-const sendGridOptions = { auth: { api_key: process.env.SENDGRID_API_KEY } };
 const Templater = require('./templater');
 
+const smtpOptions = {
+	pool: true,
+  host: process.env.SMTP_HOST,
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.SMTP_EMAIL,
+    pass: process.env.SMTP_PASSWORD,
+  },
+}
+//const sendGridOptions = { auth: { api_key: process.env.SENDGRID_API_KEY } };
+
 const sendEmail = async (opt) => {
-	const mailer = nodemailer.createTransport(sgTransport(sendGridOptions));
+	//const mailer = nodemailer.createTransport(sgTransport(sendGridOptions));
+	const mailer = nodemailer.createTransport(smtpOptions);
 	return mailer
 		.sendMail({
 			...opt,
-			from: '"Chinemachine" <hello@chinemachinevintage.com>',
+			from: '"Chinemachine" <'+ process.env.SMTP_EMAIL +'>',
 		})
 		.then((res) => {
 			return res;
@@ -103,4 +115,5 @@ module.exports = {
 	appointmentCancelled,
 	appointmentBooked,
 	send,
+	sendEmail
 };
