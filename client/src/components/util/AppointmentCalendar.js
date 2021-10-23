@@ -284,7 +284,7 @@ class AppointmentCalendar extends Component {
 		const { availableMonth } = this.state;
 		const { edit } = this.props;
 		let available = availableMonth.filter((avail) => moment.tz(avail.startTime, 'Europe/Paris').isSame(date, 'day'));
-		let booked = available.filter((avail) => avail.status === 'BOOKED').length > 0;
+		let booked = available.filter((avail) => avail.status === 'BOOKED').length === available.length;
 		//if(available.length) console.log(date, available)
 		return available.length ? (booked ? 'ac-calendar-booked' : 'ac-calendar-active') : true;
 	}

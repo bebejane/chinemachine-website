@@ -1,7 +1,7 @@
 const moment = require('moment-timezone');
 const nodemailer = require('nodemailer');
 const dictionaryController = require('../controllers/dictionary');
-const sgTransport = require('nodemailer-sendgrid-transport');
+//const sgTransport = require('nodemailer-sendgrid-transport');
 const Templater = require('./templater');
 
 const smtpOptions = {
@@ -14,10 +14,12 @@ const smtpOptions = {
     pass: process.env.SMTP_PASSWORD,
   },
 }
+// SendGrid
 //const sendGridOptions = { auth: { api_key: process.env.SENDGRID_API_KEY } };
+//const mailer = nodemailer.createTransport(sgTransport(sendGridOptions));
 
 const sendEmail = async (opt) => {
-	//const mailer = nodemailer.createTransport(sgTransport(sendGridOptions));
+	
 	const mailer = nodemailer.createTransport(smtpOptions);
 	return mailer
 		.sendMail({
