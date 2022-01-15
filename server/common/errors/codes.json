@@ -121,8 +121,8 @@
 	"INVALID_PASSWORD_FORMAT":{
 		"code":1017,
 		"message":{
-			"en": "Password must be minimum eight characters, at least one letter and one number",
-			"fr": "Le mot de passe doit comporter au moins huit caractères, au moins une lettre et un chiffre"
+			"en": "Password must be minimum eight characters, at least one letter and one number, no special characters.",
+			"fr": "Le mot de passe doit comporter au moins huit caractères, au moins une lettre et un chiffre, pas de lettre spéciale."
 		}
 	},
 	"INVALID_EMAIL_FORMAT":{
