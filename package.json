@@ -1,6 +1,6 @@
 {
 	"name": "chinemachine",
-	"version": "1.0.723",
+	"version": "1.0.726",
 	"description": "Chinemachine website",
 	"scripts": {
 		"start": "export NODE_OPTIONS=--openssl-legacy-provider && node server/index.js",
