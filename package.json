@@ -3,8 +3,8 @@
 	"version": "1.0.723",
 	"description": "Chinemachine website",
 	"scripts": {
-		"start": "node server/index.js",
-		"start-watch": "nodemon server/index.js",
+		"start": "export NODE_OPTIONS=--openssl-legacy-provider && node server/index.js",
+		"start-watch": "export NODE_OPTIONS=--openssl-legacy-provider && nodemon server/index.js",
 		"dev": "concurrently \"yarn run start-watch\" \"cd client && yarn start\"",
 		"dev:local": "concurrently \"mongod >/dev/null 2>&1\" \"MONGODB_URI=mongodb://localhost/chinemachine yarn run start-watch\" \"cd client && yarn start\"",
 		"github": "git add . && git commit -m \"backup\" && git push -u origin master && cd client && git add . && git commit -m \"backup\" && git push -u origin master && cd ..",
@@ -47,7 +47,6 @@
 		"mongoose": "^5.10.0",
 		"mongoose-sequence": "^5.2.2",
 		"multer": "^1.4.2",
-		"node-sass": "^6.0.1",
 		"nodemailer": "^6.4.17",
 		"nodemailer-sendgrid-transport": "^0.2.0",
 		"npm": "^6.14.11",
@@ -71,6 +70,7 @@
 	"devDependencies": {
 		"concurrently": "^5.3.0",
 		"nodemon": "^2.0.4",
-		"sass-loader": "^13.2.0"
+		"sass-loader": "^13.2.0",
+		"node-gyp": "^8.4.1"
 	}
 }
