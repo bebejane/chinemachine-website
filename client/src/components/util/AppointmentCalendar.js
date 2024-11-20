@@ -1,29 +1,33 @@
-import React, { Component } from 'react';
-import './AppointmentCalendar.css';
-import Select from 'react-select';
-import AsyncSelect from 'react-select/async';
-import moment from 'moment-timezone';
-import Hammer from 'rc-hammerjs';
-import Button from '../util/Button';
-import Loader from '../util/Loader';
-import Calendar from 'react-calendar';
+import React, { Component } from "react";
+import "./AppointmentCalendar.css";
+import Select from "react-select";
+import AsyncSelect from "react-select/async";
+import moment from "moment-timezone";
+import Hammer from "rc-hammerjs";
+import Button from "../util/Button";
+import Loader from "../util/Loader";
+import Calendar from "react-calendar";
 
-import dictionaryService from '../../services/dictionaryService';
-import storeService from '../../services/storeService';
-import userService from '../../services/userService';
-import appointmentService from '../../services/appointmentService';
-import { findTimeZone, getZonedTime, getUnixTime } from 'timezone-support';
+import dictionaryService from "../../services/dictionaryService";
+import storeService from "../../services/storeService";
+import userService from "../../services/userService";
+import appointmentService from "../../services/appointmentService";
+import { findTimeZone, getZonedTime, getUnixTime } from "timezone-support";
 
 const REFRESH_INTERVAL = 30000;
 
 const createAvailableTime = (year, month, day, hour, minute, store) => {
 	const startTime =
 		moment
-			.tz(moment({ year, month, day, hour, minute }).format('YYYY-MM-DD HH:mm'), 'YYYY-MM-DD HH:mm', 'Europe/Paris')
+			.tz(
+				moment({ year, month, day, hour, minute }).format("YYYY-MM-DD HH:mm"),
+				"YYYY-MM-DD HH:mm",
+				"Europe/Paris"
+			)
 			.unix() * 1000;
 	const endTime = startTime + 30 * 60 * 1000;
 	return {
-		_id: startTime + '-' + endTime,
+		_id: startTime + "-" + endTime,
 		startTime: startTime,
 		endTime: endTime,
 		storeId: store._id,
@@ -34,7 +38,16 @@ const createAvailableTime = (year, month, day, hour, minute, store) => {
 const generateAvailable = (date, store) => {
 	const available = [];
 	for (var i = 0, h = 12, m = 0; h < 20; i++, h += 0.5) {
-		available.push(createAvailableTime(date.getFullYear(), date.getMonth(), date.getDate(), Math.floor(h), m, store));
+		available.push(
+			createAvailableTime(
+				date.getFullYear(),
+				date.getMonth(),
+				date.getDate(),
+				Math.floor(h),
+				m,
+				store
+			)
+		);
 		m = m === 0 ? 30 : 0;
 	}
 	return available;
@@ -63,7 +76,7 @@ class AppointmentCalendar extends Component {
 			availableMonth: [],
 			appointment: undefined,
 			updatingSlot: undefined,
-			customerSearchTerm: '',
+			customerSearchTerm: "",
 			customerSearch: [],
 			customer: undefined,
 			booking: false,
@@ -87,11 +100,14 @@ class AppointmentCalendar extends Component {
 		try {
 			if (!dict) dict = await dictionaryService.getDictionary(langCode);
 			const stores = await storeService.getAll();
-			const store = stores.length ? stores[1] : undefined;
+			const store = stores.length ? stores[0] : undefined;
 			const { date } = this.state;
 			await this.setStateAsync({ dict, stores, store, date });
 			await this.loadAll(date);
-			this.refreshInterval = setInterval(() => this.loadAll(this.state.date, true), REFRESH_INTERVAL);
+			this.refreshInterval = setInterval(
+				() => this.loadAll(this.state.date, true),
+				REFRESH_INTERVAL
+			);
 		} catch (err) {
 			this.handleError(err);
 		}
@@ -132,8 +148,8 @@ class AppointmentCalendar extends Component {
 					return (
 						available.filter(
 							(a) =>
-								moment(a.startTime).format('HH:mm') === moment(avail.startTime).format('HH:mm') &&
-								moment(a.endTime).format('HH:mm') === moment(avail.endTime).format('HH:mm')
+								moment(a.startTime).format("HH:mm") === moment(avail.startTime).format("HH:mm") &&
+								moment(a.endTime).format("HH:mm") === moment(avail.endTime).format("HH:mm")
 						)[0] || avail
 					);
 				});
@@ -141,8 +157,8 @@ class AppointmentCalendar extends Component {
 				available = available.filter(
 					(avail) =>
 						!avail.userId &&
-						avail.status === 'ACTIVE' &&
-						!moment(avail.startTime).isBefore(moment().tz('Europe/Paris'), 'day')
+						avail.status === "ACTIVE" &&
+						!moment(avail.startTime).isBefore(moment().tz("Europe/Paris"), "day")
 				);
 
 			this.setState({ available, date });
@@ -159,13 +175,17 @@ class AppointmentCalendar extends Component {
 		date = date || this.state.date ? new Date(date || this.state.date) : new Date();
 		if (!background) this.setState({ refreshing: true });
 		try {
-			let availableMonth = await appointmentService.getByMonth(date.getFullYear(), date.getMonth(), store._id);
+			let availableMonth = await appointmentService.getByMonth(
+				date.getFullYear(),
+				date.getMonth(),
+				store._id
+			);
 			if (!edit)
 				availableMonth = availableMonth.filter(
 					(avail) =>
 						!avail.userId &&
-						avail.status === 'ACTIVE' &&
-						!moment(avail.startTime).isBefore(moment().tz('Europe/Paris'), 'day')
+						avail.status === "ACTIVE" &&
+						!moment(avail.startTime).isBefore(moment().tz("Europe/Paris"), "day")
 				);
 
 			this.setState({ availableMonth, date });
@@ -196,7 +216,7 @@ class AppointmentCalendar extends Component {
 		selected = {
 			...selected,
 			generated: true,
-			_id: new Date(selected.startTime).getTime() + '-' + new Date(selected.endTime).getTime(),
+			_id: new Date(selected.startTime).getTime() + "-" + new Date(selected.endTime).getTime(),
 		};
 		available = available.map((avail) => (avail._id === id ? selected : avail));
 		availableMonth = availableMonth.filter((avail) => avail._id !== id);
@@ -206,7 +226,6 @@ class AppointmentCalendar extends Component {
 		this.setState({ date });
 	}
 	async handleDateChanged(newDate) {
-
 		await this.loadAppointments(newDate);
 		this.setState({ selected: undefined });
 		if (this.props.onChange) this.props.onChange(newDate);
@@ -251,15 +270,13 @@ class AppointmentCalendar extends Component {
 	}
 
 	async handleSelected(selected) {
-
 		this.setState({ selected, loadingAppointment: selected.userId }, async () => {
-
 			if (selected.userId) {
 				try {
 					selected.appointment = await appointmentService.get(selected._id);
 
 					this.setState({ selected, loadingAppointment: false }, () => {
-						document.getElementById('ac-appointment').scrollIntoView();
+						document.getElementById("ac-appointment").scrollIntoView();
 					});
 				} catch (err) {
 					this.setState({ loadingAppointment: false });
@@ -283,10 +300,12 @@ class AppointmentCalendar extends Component {
 	handleIsDateAvailable({ activeStartDate, date, view }) {
 		const { availableMonth } = this.state;
 		const { edit } = this.props;
-		let available = availableMonth.filter((avail) => moment.tz(avail.startTime, 'Europe/Paris').isSame(date, 'day'));
-		let booked = available.filter((avail) => avail.status === 'BOOKED').length === available.length;
+		let available = availableMonth.filter((avail) =>
+			moment.tz(avail.startTime, "Europe/Paris").isSame(date, "day")
+		);
+		let booked = available.filter((avail) => avail.status === "BOOKED").length === available.length;
 		//if(available.length) console.log(date, available)
-		return available.length ? (booked ? 'ac-calendar-booked' : 'ac-calendar-active') : true;
+		return available.length ? (booked ? "ac-calendar-booked" : "ac-calendar-active") : true;
 	}
 	handleTileContent({ date, view }) {}
 	async handleDeleteAppointment(id) {
@@ -319,15 +338,17 @@ class AppointmentCalendar extends Component {
 	getMaxDate() {
 		const { edit } = this.props;
 		return edit
-			? moment().tz('Europe/Paris').add('months', 12).toDate()
-			: moment().tz('Europe/Paris').add('months', 2).toDate();
+			? moment().tz("Europe/Paris").add("months", 12).toDate()
+			: moment().tz("Europe/Paris").add("months", 2).toDate();
 	}
 	getMinDate() {
 		const { edit } = this.props;
-		return edit ? moment().tz('Europe/Paris').subtract('months', 12).toDate() : new Date();
+		return edit ? moment().tz("Europe/Paris").subtract("months", 12).toDate() : new Date();
 	}
 	handleError(err) {
-		const error = err.response && err.response.data ? err.response.data.message : err.message || err.toString();
+		console.log(err);
+		const error =
+			err.response && err.response.data ? err.response.data.message : err.message || err.toString();
 		this.setState({ error });
 		if (this.props.onError) this.props.onError(err);
 	}
@@ -340,7 +361,7 @@ class AppointmentCalendar extends Component {
 				let customerSearch = await userService.search(customerSearchTerm);
 				customerSearch = customerSearch.map((c) => {
 					return {
-						label: c.firstName + ' ' + c.lastName + ' (' + c.email + ')',
+						label: c.firstName + " " + c.lastName + " (" + c.email + ")",
 						value: c._id,
 					};
 				});
@@ -359,8 +380,8 @@ class AppointmentCalendar extends Component {
 
 		const { customer, selected } = this.state;
 
-		if (!customer) return this.handleError('Not a valid customer');
-		if (!selected) return this.handleError('No appointment time selected');
+		if (!customer) return this.handleError("Not a valid customer");
+		if (!selected) return this.handleError("No appointment time selected");
 
 		const userId = customer.value;
 		const appointmentId = selected._id;
@@ -401,61 +422,67 @@ class AppointmentCalendar extends Component {
 		const minDate = this.getMinDate();
 		const selectStyle = {
 			valueContainer: (provided, state) => {
-				return { ...provided, justifyContent: 'center', fontWeight: 'bold' };
+				return { ...provided, justifyContent: "center", fontWeight: "bold" };
 			},
 		};
 
 		const slots = available.map((a, idx) => {
 			let className;
-			if (a.status === 'CANCELLED' && selected && selected._id === a._id) className = 'ac-slot-cancelled-selected';
-			else if (a.status === 'CANCELLED') className = 'ac-slot-cancelled';
-			else if (a.userId && selected && selected._id === a._id) className = 'ac-slot-booked-selected';
-			else if (a.userId) className = 'ac-slot-booked';
-			else if (selected && selected._id === a._id && !selected.generated) className = 'ac-slot-selected-active';
-			else if (selected && selected._id === a._id && selected.generated) className = 'ac-slot-selected-deactivated';
-			else if (!a.generated) className = 'ac-slot-available';
-			else className = 'ac-slot';
+			if (a.status === "CANCELLED" && selected && selected._id === a._id)
+				className = "ac-slot-cancelled-selected";
+			else if (a.status === "CANCELLED") className = "ac-slot-cancelled";
+			else if (a.userId && selected && selected._id === a._id)
+				className = "ac-slot-booked-selected";
+			else if (a.userId) className = "ac-slot-booked";
+			else if (selected && selected._id === a._id && !selected.generated)
+				className = "ac-slot-selected-active";
+			else if (selected && selected._id === a._id && selected.generated)
+				className = "ac-slot-selected-deactivated";
+			else if (!a.generated) className = "ac-slot-available";
+			else className = "ac-slot";
 
 			return (
 				<Hammer
-					key={'hmr-' + idx}
+					key={"hmr-" + idx}
 					onDoubleTap={() => this.handleToggleAvailability(a)}
 					onTap={() => this.handleSelected(a)}
 				>
-					<div key={'appointment' + idx} className={className}>
-						<div className='ac-slot-time'>
-							{a.status === 'CANCELLED'
-								? 'CANCELLED'
-								: moment.tz(a.startTime, 'Europe/Paris').format('HH:mm') +
-								  ' - ' +
-								  moment.tz(a.endTime, 'Europe/Paris').format('HH:mm')}
+					<div key={"appointment" + idx} className={className}>
+						<div className="ac-slot-time">
+							{a.status === "CANCELLED"
+								? "CANCELLED"
+								: moment.tz(a.startTime, "Europe/Paris").format("HH:mm") +
+								  " - " +
+								  moment.tz(a.endTime, "Europe/Paris").format("HH:mm")}
 						</div>
-						{updatingSlot === a._id && <Loader styles={{ backgroundColor: 'rgb(221, 221, 221)' }} type='fast' />}
+						{updatingSlot === a._id && (
+							<Loader styles={{ backgroundColor: "rgb(221, 221, 221)" }} type="fast" />
+						)}
 					</div>
 				</Hammer>
 			);
 		});
 
 		if (loading) return <Loader />;
-		
+
 		return (
-			<div id='ac-wrap'>
-				<div id='ac'>
+			<div id="ac-wrap">
+				<div id="ac">
 					{store && stores && (
-						<div id='ac-appointment-store'>
+						<div id="ac-appointment-store">
 							<Select
 								onChange={this.handleStoreChange}
 								value={{
 									value: store._id,
-									label: store.name + ', ' + store.city + ' (' + store.postalCode + ')',
+									label: store.name + ", " + store.city + " (" + store.postalCode + ")",
 								}}
-								menuPlacement='bottom'
+								menuPlacement="bottom"
 								isSearchable={false}
 								styles={selectStyle}
 								options={stores.map((store) => {
 									return {
 										value: store._id,
-										label: store.name + ', ' + store.city + ' (' + store.postalCode + ')',
+										label: store.name + ", " + store.city + " (" + store.postalCode + ")",
 									};
 								})}
 							/>
@@ -464,9 +491,9 @@ class AppointmentCalendar extends Component {
 					<Calendar
 						minDate={minDate}
 						//maxDate={maxDate}
-						maxDetail={'month'}
-						minDetail={'month'}
-						locale={langCode === 'fr' ? 'fr-FR' : 'en-EN'}
+						maxDetail={"month"}
+						minDetail={"month"}
+						locale={langCode === "fr" ? "fr-FR" : "en-EN"}
 						onChange={this.handleDateChanged}
 						tileDisabled={this.handleIsDateDisabled}
 						tileClassName={(data) => this.handleIsDateAvailable(data)}
@@ -477,50 +504,54 @@ class AppointmentCalendar extends Component {
 						showNeighboringMonth={false}
 						onActiveStartDateChange={this.handleStartDateChange}
 					/>
-					<div id='ac-slots'>
+					<div id="ac-slots">
 						{date && available.length > 0 ? (
-							<div id='ac-slots-wrap'>{slots}</div>
+							<div id="ac-slots-wrap">{slots}</div>
 						) : availableMonth.length === 0 ? (
-							<div id='ac-slots-empty'>{dict.noAppointmentsAvailableMonth}</div>
+							<div id="ac-slots-empty">{dict.noAppointmentsAvailableMonth}</div>
 						) : (
-							<div id='ac-slots-empty'>{dict.noAppointmentsAvailable}</div>
+							<div id="ac-slots-empty">{dict.noAppointmentsAvailable}</div>
 						)}
 						{refreshing && <Loader />}
 					</div>
 					{edit && selected && (
-						<div id='ac-appointment'>
+						<div id="ac-appointment">
 							{loadingAppointment ? (
 								<Loader overlay={true} />
 							) : (
 								<React.Fragment>
-									<div id='ac-appointment-details'>
-										<div id='ac-appointment-details-date-wrap'>
-											<div id='ac-appointment-details-date'>
-												{moment(selected.startTime).tz('Parisƒ/Europe').format('HH:mm')} {dict.to}{' '}
-												{moment(selected.endTime).tz('Europe/Paris').format('HH:mm')}
+									<div id="ac-appointment-details">
+										<div id="ac-appointment-details-date-wrap">
+											<div id="ac-appointment-details-date">
+												{moment(selected.startTime).tz("Parisƒ/Europe").format("HH:mm")} {dict.to}{" "}
+												{moment(selected.endTime).tz("Europe/Paris").format("HH:mm")}
 											</div>
-											<div id='ac-appointment-details-time'>
-												{moment.tz(selected.startTime, 'Europe/Paris').format('dddd MMM Do')}
+											<div id="ac-appointment-details-time">
+												{moment.tz(selected.startTime, "Europe/Paris").format("dddd MMM Do")}
 											</div>
-											<div id='ac-appointment-details-store'>
+											<div id="ac-appointment-details-store">
 												{selected.store.name}, {selected.store.postalCode}
 											</div>
 										</div>
 										{selected.appointment && selected.appointment.user ? (
-											<div id='ac-appointment-details-wrap'>
-												<div id='ac-appointment-details-name'>
+											<div id="ac-appointment-details-wrap">
+												<div id="ac-appointment-details-name">
 													{selected.appointment.user.firstName} {selected.appointment.user.lastName}
 												</div>
 
-												<div id='ac-appointment-details-email'>{selected.appointment.user.email}</div>
-												<div id='ac-appointment-details-phone'>{selected.appointment.user.phone}</div>
+												<div id="ac-appointment-details-email">
+													{selected.appointment.user.email}
+												</div>
+												<div id="ac-appointment-details-phone">
+													{selected.appointment.user.phone}
+												</div>
 											</div>
 										) : (
-											<div id='ac-appointment-details-book'>
-												<form id='ac-appointment-book-form' onSubmit={this.handleCustomerBooking}>
+											<div id="ac-appointment-details-book">
+												<form id="ac-appointment-book-form" onSubmit={this.handleCustomerBooking}>
 													<AsyncSelect
 														onChange={this.handleCustomerSearchSelected}
-														placeholder='Search customers...'
+														placeholder="Search customers..."
 														loadOptions={this.handleCustomerSearch}
 														cacheOptions
 														value={customer}
@@ -534,32 +565,50 @@ class AppointmentCalendar extends Component {
 										)}
 									</div>
 
-									<div id='ac-appointment-buttons'>
+									<div id="ac-appointment-buttons">
 										{selected.appointment ? (
 											<React.Fragment>
-												<Button loading={cancelling} onClick={() => this.handleCancelAppointment(selected.appointment)}>
+												<Button
+													loading={cancelling}
+													onClick={() => this.handleCancelAppointment(selected.appointment)}
+												>
 													CANCEL
 												</Button>
-												<Button loading={saving} onClick={() => this.handleDeleteAppointment(selected.appointment._id)}>
+												<Button
+													loading={saving}
+													onClick={() => this.handleDeleteAppointment(selected.appointment._id)}
+												>
 													DELETE
 												</Button>
 												{
-													<a href={'tel:' + (selected.appointment.user ? selected.appointment.user.phone : '')}>
+													<a
+														href={
+															"tel:" +
+															(selected.appointment.user ? selected.appointment.user.phone : "")
+														}
+													>
 														<Button
-															disabled={selected.appointment.user && selected.appointment.user.phone ? false : true}
+															disabled={
+																selected.appointment.user && selected.appointment.user.phone
+																	? false
+																	: true
+															}
 														>
 															CALL
 														</Button>
 													</a>
 												}
-												<a href={'mailto:' + selected.appointment.email}>
+												<a href={"mailto:" + selected.appointment.email}>
 													<Button>E-MAIL</Button>
 												</a>
 											</React.Fragment>
 										) : (
 											<React.Fragment>
-												<Button loading={saving} onClick={() => this.handleToggleAvailability(selected)}>
-													{selected.generated ? 'ACTIVATE' : 'DE-ACTIVATE'}
+												<Button
+													loading={saving}
+													onClick={() => this.handleToggleAvailability(selected)}
+												>
+													{selected.generated ? "ACTIVATE" : "DE-ACTIVATE"}
 												</Button>
 											</React.Fragment>
 										)}

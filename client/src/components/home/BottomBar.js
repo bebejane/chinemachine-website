@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './BottomBar.css';
-import Footer from './Footer';
-import LanguageSelector from './LanguageSelector';
-import InfoBlock from './InfoBlock';
-import InfoSection from './InfoSection';
-import ShopSection from './ShopSection';
-import GallerySection from './GallerySection';
-import StoreInfo from './StoreInfo';
-import MainImageGallery from './MainImageGallery';
-import FindUs from './FindUs';
+import React, { Component } from "react";
+import "./BottomBar.css";
+import Footer from "./Footer";
+import LanguageSelector from "./LanguageSelector";
+import InfoBlock from "./InfoBlock";
+import InfoSection from "./InfoSection";
+import ShopSection from "./ShopSection";
+import GallerySection from "./GallerySection";
+import StoreInfo from "./StoreInfo";
+import MainImageGallery from "./MainImageGallery";
+import FindUs from "./FindUs";
 
 class BottomBar extends Component {
 	constructor(props) {
@@ -38,7 +38,7 @@ class BottomBar extends Component {
 		const { dict, langCode, languages, sections } = this.props;
 
 		return (
-			<div id='bottom-bar'>
+			<div id="bottom-bar">
 				<LanguageSelector
 					onChangeLanguage={(langCode) => this.props.onChangeLanguage(langCode)}
 					languages={languages}
@@ -46,8 +46,12 @@ class BottomBar extends Component {
 					dict={dict}
 				/>
 				<MainImageGallery langCode={langCode} />
-				<StoreInfo langCode={langCode} dict={dict} onBookAppointment={() => this.props.onBookAppointment(true)} />
-				<div id='bottom-sections'>
+				<StoreInfo
+					langCode={langCode}
+					dict={dict}
+					onBookAppointment={() => this.props.onBookAppointment(true)}
+				/>
+				<div id="bottom-sections">
 					{sections.map((section, idx) => (
 						<InfoBlock
 							id={section._id}
@@ -59,14 +63,14 @@ class BottomBar extends Component {
 							dict={dict}
 							noBorder={sections.length === idx + 1}
 						>
-							{section.type === 'info' ? (
+							{section.type === "info" ? (
 								<InfoSection
 									key={section._id + section.type}
 									content={section.data.content}
 									langCode={langCode}
 									dict={dict}
 								/>
-							) : section.type === 'gallery' ? (
+							) : section.type === "gallery" ? (
 								<GallerySection
 									key={section._id + section.type}
 									id={section._id}
@@ -74,7 +78,7 @@ class BottomBar extends Component {
 									langCode={langCode}
 									dict={dict}
 								/>
-							) : section.type === 'onlineshop' ? (
+							) : section.type === "onlineshop" ? (
 								<ShopSection
 									key={section._id + section.type}
 									id={section._id}
@@ -82,7 +86,7 @@ class BottomBar extends Component {
 									dict={dict}
 									onError={this.props.onError}
 								/>
-							) : section.type === 'findus' ? (
+							) : section.type === "findus" ? (
 								<FindUs
 									key={section._id + section.type}
 									id={section._id}
@@ -94,7 +98,6 @@ class BottomBar extends Component {
 						</InfoBlock>
 					))}
 				</div>
-				<Footer />
 			</div>
 		);
 	}

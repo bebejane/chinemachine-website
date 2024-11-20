@@ -73,9 +73,6 @@ class StoreInfo extends Component {
 			<React.Fragment>
 				<div id="store-info">
 					<div id="store-info-left">
-						<div>
-							<h3>{dict.ourStores}</h3>
-						</div>
 						<div className="store-info-details-wrap">
 							{stores.map((store, idx) => (
 								<div key={"store" + idx} className="store-info-details">
