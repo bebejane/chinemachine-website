@@ -10,6 +10,7 @@
 		"github": "git add . && git commit -m \"backup\" && git push -u origin master && cd client && git add . && git commit -m \"backup\" && git push -u origin master && cd ..",
 		"logs:prod": "heroku logs --tail",
 		"version": "node -p \"require('./package.json').version\"",
+		"build": "pnpm run build:ui",
 		"build:ui": "cd client && npm run build  && cd .. && rm -rf server/build && cd client && cp  -r build ../server && cd ..",
 		"deploy": "npm run bump && echo `date` > gitupdate && git add . && git commit -m deploy && git push heroku master --force",
 		"deploy:full": "npm run bump && npm run build:ui && npm run deploy && npm run version",
