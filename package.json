@@ -5,8 +5,8 @@
 	"scripts": {
 		"start": "export NODE_OPTIONS=--openssl-legacy-provider && node server/index.js",
 		"start-watch": "export NODE_OPTIONS=--openssl-legacy-provider && nodemon server/index.js",
-		"dev": "concurrently \"yarn run start-watch\" \"cd client && yarn start\"",
-		"dev:local": "concurrently \"mongod >/dev/null 2>&1\" \"MONGODB_URI=mongodb://localhost/chinemachine yarn run start-watch\" \"cd client && yarn start\"",
+		"dev": "concurrently \"npm run start-watch\" \"cd client && npm start\"",
+		"dev:local": "concurrently \"mongod >/dev/null 2>&1\" \"MONGODB_URI=mongodb://localhost/chinemachine npm run start-watch\" \"cd client && npm start\"",
 		"github": "git add . && git commit -m \"backup\" && git push -u origin master && cd client && git add . && git commit -m \"backup\" && git push -u origin master && cd ..",
 		"logs:prod": "heroku logs --tail",
 		"version": "node -p \"require('./package.json').version\"",
