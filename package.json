@@ -33,6 +33,7 @@
 		"bourbon": "^7.0.0",
 		"colors": "^1.4.0",
 		"compression": "^1.7.4",
+		"compression-webpack-plugin": "^11.1.0",
 		"cookie-parser": "^1.4.5",
 		"dotenv": "^8.2.0",
 		"entities": "^2.2.0",
